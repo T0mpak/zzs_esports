@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="ru">
+<head>
+    <!-- //Meta tag Keywords -->
+    <title>zzs' eSports</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+    <!-- Bootstrap-Core-CSS -->
+    <!--/ Style-CSS -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" type="text/css" media="all">
+    <!--// Style-CSS -->
+    <!-- font-awesome-icons -->
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700"
+          rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900"
+          rel="stylesheet">
+    <!-- //Fonts -->
+</head>
+
+<body>
+    <div id="page" class="page"><!-- mian-content -->
+        <div class="main-banner bg bg1" id="home" style="background-color: background-image: url('single-post-pic.jpg');">
+            <!-- header -->
+            <header class="header">
+                <div class="container-fluid px-lg-5">
+                    <!-- nav -->
+                    <nav class="py-4">
+                        <div id="logo">
+                            <h1> <a href="https://steamcommunity.com/groups/zykzykspat" class="editContent" style="outline: none; outline-offset: -2px; cursor: inherit; color: rgb(255, 255, 255); font-size: 40px; background-color: rgba(0, 0, 0, 0); font-family: &quot;Source Sans Pro&quot;, sans-serif;">Zyk-Zyk Spat'</a></h1>
+                        </div>
+                    </nav>
+                    <!-- //nav -->
+                </div>
+            </header>
+            <!-- //header -->
+        </div>
+        <!--//main-content-->
+        <section class="ab-info-main py-md-5 py-4 editContent" style="padding-left: 3rem; padding-right: 3rem;">
+            <div class="container-fluid py-md-3">
+                <div class="row">
+                    <div class="left-ads-display col-lg-9">
+                        <div class="row">
+                            {% for player in player_list %}
+                            <div class="col-md-4 product-men">
+                                <div class="product-shoe-info editContent text-center mt-lg-4" >
+                                    <div class="men-thumb-item">
+                                        <img src="{{ player.photo.url }}" class="img-fluid" alt="" >
+                                    </div>
+                                    <div class="item-info-product">
+                                        <h4 class="">
+                                            <a href="../player_detail.html" class="editContent" >{{ player.player.first_name }}</a>
+                                        </h4>
+                                        <div class="product_price">
+                                            <div class="grid-price">
+                                                <span class="money editContent" >{{ player.age }} лет</span>
+                                            </div>
+                                        </div>
+                                        <ul class="stars">
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                            <li><a href="#"><span class="fa fa-star" aria-hidden="true" ></span></a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                        <!--<div class="grid-img-right mt-4 text-right bg bg1" >
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- //contact -->
+        <!-- footer -->
+        <footer class="editContent">
+            <div class="container">
+                <div class="row footer-top">
+                    <div class="col-lg-4 footer-grid_section_w3layouts">
+                        <h2 class="logo-2 mb-lg-4 mb-3">
+                            <a href="http://127.0.0.1:8000" class="editContent">
+                                <span class="fa" aria-hidden="true" >
+                                    ZZS-eSports
+                                </span>
+                            </a>
+                        </h2>
+                        <p class="editContent" >
+                            Киберспортивный клуб по CSGO, основанный в 2017 году. Четвертьфиналисты квалификации Cybermatch 2019, топ-74 республиканского турнира AltelCyberGames 2018, участники AlamanCup.
+                        </p>
+                        <h4 class="sub-con-fo ad-info my-4 editContent" >ССЫЛКИ</h4>
+                        <ul class="w3layouts_social_list media-soc list-unstyled">
+                            <li>
+                                <a href="https://www.faceit.com/ru/teams/7b8a195d-2a6a-4f06-af8d-8d26da20c1ed">
+                                    <img alt="FACEIT" src="https://static.hltv.org/images/eventLogos/1195.png"  width="16">
+                                </a>
+                            </li>
+                            <li>
+                                <a href="https://steamcommunity.com/groups/zykzykspat">
+                                    <img alt="STEAM" src="data:image/png;base64,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"  width="16">
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-8 footer-right">
+                        <div class="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
+                            <div class="col-md-4 footer-grid_section_w3layouts">
+                                <h3 class="footer-title text-uppercase editContent mb-lg-4 mb-3" >Мы в ВКонтакте</h3>
+                                <ul class="list-unstyled w3layouts-icons">
+                                    <li>
+                                        <a href="https://vk.com/ioooooooooooooooooooooooooooo" class="editContent" >Байжан "hRoomEz" Хасенов</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://vk.com/bakyt_danial" class="editContent" >Даниал "Bouchart" Бакыт</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://vk.com/amiradilkhan" class="editContent" >Амир "H4WEL" Адильхан</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://vk.com/joealen" class="editContent" >Ален "JoeAlen" Смаилов</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://vk.com/id554444336" class="editContent" >Еламан "T0mpak" Сериков</a>
+                                    </li>
+
+                                    <li>
+                                        <a href="https://vk.com/id520203869" class="editContent" >Алихан "Gaccibass10" Бекболатов
+                                            <br>(Тренер)</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-md-4 footer-grid_section_w3layouts">
+                                <!-- social icons -->
+                                <!-- social icons -->
+                            </div>
+                            <div class="col-md-4 footer-grid_section_w3layouts my-md-0 my-5">
+                                <h3 class="footer-title text-uppercase text-wh mb-lg-4 mb-3 editContent" >Контактная информация</h3>
+                                <div class="contact-info">
+                                    <div class="footer-address-inf my-4">
+                                        <h4 class="ad-info mb-2 editContent" >Email </h4>
+                                        <p class="editContent" ><a href="mailto:info@example.com">zzs.administration@gmail.com</a></p>
+                                    </div>
+                                    <div class="footer-address-inf">
+                                        <h4 class="ad-info mb-2 editContent" >Город</h4>
+                                        <p class="editContent" >Алма-Ата</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- //footer -->
+        <div class="cpy-right py-3">
+            <div class="container">
+                <div class="row">
+                    <p class="col-md-10 text-left">© 2017-2020 Зык-Зык Спать Corporation. Все права защищены | Design by
+                        <a href="https://steamcommunity.com/id/t0mpakb0y"> Асель Садвакасова.</a>
+                    </p>
+                    <!-- move top icon -->
+                    <a href="#home" class="move-top text-right col-md-2"><span class="fa fa-long-arrow-up" aria-hidden="true" ></span></a>
+                    <!-- //move top icon -->
+                </div>
+            </div>
+        </div></div>
+</body>
+</html>
