@@ -82,8 +82,8 @@ WSGI_APPLICATION = 'zzs_esports.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.path.join(BASE_DIR, 'db.postgresql'),
         'CONN_MAX_AGE': 500,
     }
 }
@@ -142,3 +142,6 @@ db_from_env = dj_database_url.config(conn_max_age=500)
 DATABASES['default'].update(db_from_env)
 DATABASES['default'] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
+# Simplified static file serving.
+# https://warehouse.python.org/project/whitenoise/
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
