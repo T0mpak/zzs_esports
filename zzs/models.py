@@ -18,7 +18,7 @@ class MostValuablePlayer(models.Model):
 
 class Match(models.Model):
     """Матчи"""
-    teams = models.CharField("Команды", max_length=300, default="ZZS - ")
+    teams = models.CharField("Команды", max_length=300)
     score = models.CharField("Счет", max_length=50)
     mvp_player = models.ForeignKey(MostValuablePlayer, verbose_name="MVP игрок", on_delete=models.SET_NULL, null=True)
     win_result = models.BooleanField("Победа", default=True)
